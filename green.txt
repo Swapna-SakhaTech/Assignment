@@ -1,0 +1,12 @@
+<input type='text' id='tbTest1' class='CheckChange'/>
+<img src='CheckMark.jpg' style='display:none;'/>
+Then add some javascript to show the image when a value is present - and to hide it if not:
+
+$("#document").ready(function(){
+    $(".CheckChange input[type='text']").on("change", function(){
+        if ($(this).val().length > 0)
+            $(this).next("img").show();
+        else
+            $(this).next("img").hide();
+    });
+});
